@@ -222,3 +222,19 @@ footer strong {
         min-height: 145px;
     }
 }
+
+.game {
+    padding: 0;
+    overflow: hidden;
+}
+
+.game img {
+    width: 100%;
+    height: 160px;
+    display: block;
+    object-fit: cover;
+}
+
+.game-content {
+    padding: 22px;
+}
