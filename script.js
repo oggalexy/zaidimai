@@ -1,13 +1,15 @@
 const OWNER = "oggalexy";
 const REPO = "zaidimai";
-const FOLDER = "zaidimai";
+
+// Tuščias kelias = ieškome pačiame repo pagrindiniame aplanke
+const FOLDER = "";
 
 const games = document.getElementById("games");
 const status = document.getElementById("status");
 
 async function loadGames() {
     try {
-        const url = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${FOLDER}`;
+        const url = `https://api.github.com/repos/${OWNER}/${REPO}/contents/`;
 
         const r = await fetch(url);
 
@@ -17,8 +19,13 @@ async function loadGames() {
 
         const items = await r.json();
 
+        // Rodome tik aplankus, esančius repo pagrindiniame lygyje
+        // ir praleidžiame techninius aplankus.
         const folders = items
-            .filter(x => x.type === "dir")
+            .filter(item =>
+                item.type === "dir" &&
+                item.name !== ".github"
+            )
             .sort((a, b) => a.name.localeCompare(b.name, "lt"));
 
         games.innerHTML = "";
@@ -35,8 +42,8 @@ async function loadGames() {
 
             a.className = "game";
 
-            // Absoliutus kelias į žaidimą
-            a.href = `/${REPO}/${FOLDER}/${encodeURIComponent(folder.name)}/`;
+            // Žaidimas yra tiesiai repo pagrindiniame lygyje
+            a.href = `/${REPO}/${encodeURIComponent(folder.name)}/`;
 
             const h = document.createElement("h2");
 
