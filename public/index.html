@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Game Hub</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">GAME HUB</div>
+    <a id="adminLink" class="admin-link hidden" href="/admin">Admin</a>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">HTML GAMES</p>
+      <h1>Žaidimų kolekcija</h1>
+      <p>Pasirink žaidimą ir pradėk žaisti.</p>
+    </section>
+
+    <section id="games" class="game-grid"></section>
+    <div id="empty" class="empty hidden">Kol kas nėra įkeltų žaidimų.</div>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
