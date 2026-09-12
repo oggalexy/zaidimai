@@ -1,6 +1,6 @@
 // ĮRAŠYK SAVO GITHUB DUOMENIS
-const OWNER = "TAVO_GITHUB_VARDAS";
-const REPO = "TAVO_REPOZITORIJA";
+const OWNER = "oggalexy";
+const REPO = "zaidimai";
 const FOLDER = "zaidimai";
 
 const games = document.getElementById("games");
