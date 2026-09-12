@@ -1,7 +1,5 @@
 const OWNER = "oggalexy";
 const REPO = "zaidimai";
-
-// Tuščias kelias = ieškome pačiame repo pagrindiniame aplanke
 const FOLDER = "";
 
 const games = document.getElementById("games");
@@ -19,8 +17,6 @@ async function loadGames() {
 
         const items = await r.json();
 
-        // Rodome tik aplankus, esančius repo pagrindiniame lygyje
-        // ir praleidžiame techninius aplankus.
         const folders = items
             .filter(item =>
                 item.type === "dir" &&
@@ -38,12 +34,43 @@ async function loadGames() {
         status.textContent = `${folders.length} žaidimai`;
 
         for (const folder of folders) {
+
+            // Tikriname, ar žaidimo aplanke yra thumbnail.png
+            let thumbnail = null;
+
+            try {
+                const thumbnailUrl =
+                    `https://api.github.com/repos/${OWNER}/${REPO}/contents/${encodeURIComponent(folder.name)}/thumbnail.png`;
+
+                const thumbnailResponse = await fetch(thumbnailUrl);
+
+                if (thumbnailResponse.ok) {
+                    const thumbnailData = await thumbnailResponse.json();
+
+                    // GitHub API pateikia download_url
+                    thumbnail = thumbnailData.download_url;
+                }
+            } catch (error) {
+                console.log(`Nerasta thumbnail.png: ${folder.name}`);
+            }
+
             const a = document.createElement("a");
 
             a.className = "game";
-
-            // Žaidimas yra tiesiai repo pagrindiniame lygyje
             a.href = `/${REPO}/${encodeURIComponent(folder.name)}/`;
+
+            // Thumbnail
+            if (thumbnail) {
+                const img = document.createElement("img");
+
+                img.src = thumbnail;
+                img.alt = `${folder.name} thumbnail`;
+
+                a.appendChild(img);
+            }
+
+            const content = document.createElement("div");
+            content.className = "game-content";
 
             const h = document.createElement("h2");
 
@@ -54,9 +81,10 @@ async function loadGames() {
             const p = document.createElement("p");
             p.textContent = "Paleisti žaidimą →";
 
-            a.appendChild(h);
-            a.appendChild(p);
+            content.appendChild(h);
+            content.appendChild(p);
 
+            a.appendChild(content);
             games.appendChild(a);
         }
 
