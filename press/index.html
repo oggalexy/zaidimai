@@ -1,0 +1,326 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hydraulic Press</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game">
+    <header class="topbar">
+      <div class="progress-info">
+        <div class="world-line">
+          <span id="worldName">WORLD 1 · SCRAP YARD</span>
+          <span id="levelName">LEVEL 1</span>
+        </div>
+        <div class="level-progress">
+          <div class="level-progress-fill" id="levelProgressFill"></div>
+        </div>
+        <div class="progress-meta">
+          <span id="levelProgressText">0 / 35 crushed</span>
+          <span id="nextUnlock">Next level: Press Power</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="statsButton" class="stats-button">Factory Stats</button>
+        <div class="money">💰 <span id="money">0</span></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="factory">
+        <div class="press">
+          <div class="press-rod" id="pressRod"></div>
+          <div class="press-head" id="pressHead"></div>
+          <div class="press-gap"></div>
+          <div class="press-base"></div>
+        </div>
+
+        <div class="conveyor" id="conveyor">
+          <div class="belt"></div>
+          <div class="rollers">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+          <div id="items"></div>
+        </div>
+      </section>
+
+      <section class="dashboard">
+        <div class="panel upgrades-panel">
+          <div class="panel-title">
+            <div>
+              <h2>Upgrades</h2>
+              <p>Unlock upgrades, worlds and stronger machines as you progress</p>
+            </div>
+            <div id="comboDisplay" class="combo-display">READY</div>
+          </div>
+
+          <div class="upgrade-grid">
+            <button id="speedUpgrade">
+              <span>Conveyor Speed</span>
+              <b>Level <span id="speedLevel">1</span></b>
+              <small>Cost: <span id="speedCost">25</span> 💰</small>
+            </button>
+
+            <button id="pressSpeedUpgrade">
+              <span>Press Speed</span>
+              <b>Level <span id="pressSpeedLevel">1</span></b>
+              <small>Faster press cycle · Cost: <span id="pressSpeedCost">90</span> 💰</small>
+            </button>
+
+            <button id="valueUpgrade">
+              <span>Item Value</span>
+              <b>Level <span id="valueLevel">1</span></b>
+              <small>More money per crush · Cost: <span id="valueCost">50</span> 💰</small>
+            </button>
+
+            <button id="varietyUpgrade">
+              <span>Item Variety</span>
+              <b>Level <span id="varietyLevel">1</span></b>
+              <small>Unlocks more objects · Cost: <span id="varietyCost">75</span> 💰</small>
+            </button>
+
+            <button id="powerUpgrade">
+              <span>Press Power</span>
+              <b>Level <span id="powerLevel">1</span></b>
+              <small>Unlocks at level 2 · Cost: <span id="powerCost">120</span> 💰</small>
+            </button>
+
+            <button id="luckUpgrade">
+              <span>Scrap Luck</span>
+              <b>Level <span id="luckLevel">1</span></b>
+              <small>Unlocks at level 4 · Cost: <span id="luckCost">180</span> 💰</small>
+            </button>
+
+            <button id="autoUpgrade">
+              <span>Feeder Upgrade</span>
+              <b>Level <span id="autoLevel">1</span></b>
+              <small>Unlocks at level 3 · Cost: <span id="autoCost">300</span> 💰</small>
+            </button>
+
+            <button id="machineUpgrade">
+              <span>Upgrade Machine</span>
+              <b>Tier <span id="machineLevel">1</span></b>
+              <small>Unlocks at level 7 · Cost: <span id="machineCost">1000</span> 💰</small>
+            </button>
+          </div>
+        </div>
+
+        <aside class="side-column">
+          <div class="panel sound-panel">
+            <h2>Sound</h2>
+
+            <div class="volume-row">
+              <label>Master <strong id="masterVolumeValue">55%</strong></label>
+              <input id="masterVolume" type="range" min="0" max="100" value="55">
+            </div>
+
+            <div class="volume-row">
+              <label>Conveyor <strong id="conveyorVolumeValue">16%</strong></label>
+              <input id="conveyorVolume" type="range" min="0" max="100" value="16">
+            </div>
+
+            <div class="volume-row">
+              <label>Crushing <strong id="crushVolumeValue">72%</strong></label>
+              <input id="crushVolume" type="range" min="0" max="100" value="72">
+            </div>
+
+            <div class="volume-row">
+              <label>Upgrades <strong id="upgradeVolumeValue">55%</strong></label>
+              <input id="upgradeVolume" type="range" min="0" max="100" value="55">
+            </div>
+          </div>
+
+          <div class="panel control-panel">
+            <div class="mini-stats">
+              <span><b id="crushed">0</b> crushed</span>
+              <span><b id="quickCombo">0</b> combo</span>
+            </div>
+
+            <button id="pauseButton">Pause factory</button>
+            <button id="resetButton" class="danger-button">Reset progress</button>
+            <button id="reportBugButton">🐛 Report Bug</button>
+          </div>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <div id="adminConsole" class="admin-console" aria-hidden="true">
+    <div class="admin-console-box">
+      <div class="admin-console-title">SECRET CONSOLE</div>
+
+      <input
+        id="adminCommandInput"
+        type="text"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="Enter command..."
+      >
+
+      <div class="admin-console-hint">🤫</div>
+    </div>
+  </div>
+
+  <div id="adminMenu" class="admin-menu" aria-hidden="true">
+    <div class="admin-menu-box">
+      <div class="admin-menu-header">
+        <div>
+          <h2>Admin Menu</h2>
+          <p>Session only · refresh to lock again</p>
+        </div>
+
+        <button id="closeAdmin" class="close-button">×</button>
+      </div>
+
+      <label class="admin-money-label">Money</label>
+
+      <input
+        id="adminMoneyInput"
+        class="admin-money-input"
+        type="number"
+        min="0"
+        step="1"
+        placeholder="Enter amount"
+      >
+
+      <div class="admin-money-actions">
+        <button id="setAdminMoney">Set Money</button>
+        <button id="addAdminMoney">Add</button>
+        <button id="removeAdminMoney">Remove</button>
+      </div>
+
+      <div id="adminStatus" class="admin-status"></div>
+    </div>
+  </div>
+
+  <div id="bugReportModal" class="bug-report-modal">
+    <div class="bug-report-box">
+      <h2>Report a Bug</h2>
+
+      <p>Tell us what went wrong:</p>
+
+      <textarea
+        id="bugReportInput"
+        placeholder="Describe the bug..."
+        maxlength="2000"
+      ></textarea>
+
+      <div class="bug-report-actions">
+        <button id="cancelBugReport">Cancel</button>
+        <button id="submitBugReport">Submit Bug</button>
+      </div>
+
+      <p id="bugReportStatus"></p>
+    </div>
+  </div>
+
+  <div id="statsModal" class="modal" aria-hidden="true">
+    <div class="stats-modal panel">
+      <div class="modal-header">
+        <div>
+          <h2>Factory Stats</h2>
+          <p>Your complete factory overview</p>
+        </div>
+
+        <button id="closeStats" class="close-button">×</button>
+      </div>
+
+      <div class="stats-grid">
+        <div>
+          <span>Money</span>
+          <strong id="modalMoney">0</strong>
+        </div>
+
+        <div>
+          <span>Total earned</span>
+          <strong id="modalEarned">0</strong>
+        </div>
+
+        <div>
+          <span>Items crushed</span>
+          <strong id="modalCrushed">0</strong>
+        </div>
+
+        <div>
+          <span>Conveyor level</span>
+          <strong id="statSpeed">1</strong>
+        </div>
+
+        <div>
+          <span>Press speed level</span>
+          <strong id="statPressSpeed">1</strong>
+        </div>
+
+        <div>
+          <span>Press cycle</span>
+          <strong id="statPressTime">2.8s</strong>
+        </div>
+
+        <div>
+          <span>Value level</span>
+          <strong id="statValue">1</strong>
+        </div>
+
+        <div>
+          <span>Item variety</span>
+          <strong id="statVariety">1</strong>
+        </div>
+
+        <div>
+          <span>Press power</span>
+          <strong id="statPower">1</strong>
+        </div>
+
+        <div>
+          <span>Luck</span>
+          <strong id="statLuck">1</strong>
+        </div>
+
+        <div>
+          <span>Feeder level</span>
+          <strong id="statAuto">1</strong>
+        </div>
+
+        <div>
+          <span>Machine tier</span>
+          <strong id="statMachine">1</strong>
+        </div>
+
+        <div>
+          <span>Current combo</span>
+          <strong id="statCombo">x1.00</strong>
+        </div>
+
+        <div>
+          <span>Best combo</span>
+          <strong id="statBestCombo">0</strong>
+        </div>
+
+        <div>
+          <span>Items unlocked</span>
+          <strong id="unlockedItems">3/12</strong>
+        </div>
+
+        <div>
+          <span>Spawn interval</span>
+          <strong id="statSpawn">1.5s</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
+```
