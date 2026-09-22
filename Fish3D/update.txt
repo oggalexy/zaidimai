@@ -1,1 +1,11 @@
+Date: 2026-09-22
 
+Kas naujo:
+
+- Pridėta sliekų kasimo vieta
+- Atnaujintas "P" menių
+- Pataisyti žuvų pavadinimai (Nuo šiol jie rašomi tik lietuvių kalba)
+- Masalas nuo šiol prarandamas tik pagavus žuvį
+- Atnaujinti upių žemėlapiai
+- Pridėtas leaderboardas "L": rodoma sugautų žuvų skaičius, didžiausia sugauta žuvis, žaidėjo lygis, pinigai, žaidimo laikas
+- Kiti dalykai, kurie nenusipelnė čia būti parašyti
