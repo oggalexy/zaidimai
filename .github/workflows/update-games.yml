@@ -7,8 +7,8 @@ on:
       - '**/index.html'
       - '**/message.txt'
       - '**/thumbnail.png'
-      - '!**/.github/**'   # ignoruojame patį workflow
-  workflow_dispatch:      # galima paleisti ir rankiniu būdu
+      - '!**/.github/**'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -16,7 +16,6 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-    # Neleidžiame action'ui paleisti savęs iš naujo
     if: github.actor != 'github-actions[bot]'
 
     steps:
@@ -40,10 +39,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if git diff --quiet games.json; then
+          git add games.json
+
+          if git diff --staged --quiet; then
             echo "games.json nepasikeitė"
           else
-            git add games.json
             git commit -m "chore: automatiškai atnaujinti games.json"
             git push
           fi
