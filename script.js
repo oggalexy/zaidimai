@@ -77,4 +77,12 @@ async function loadGames() {
             content.appendChild(p);
 
             a.appendChild(content);
-            gamesEl
+            gamesEl.appendChild(a);
+        }
+    } catch (e) {
+        console.error(e);
+        statusEl.textContent = "Nepavyko įkelti žaidimų.";
+    }
+}
+
+loadGames();
