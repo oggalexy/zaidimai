@@ -8,4 +8,5 @@ Kas naujo:
 - Masalas nuo šiol prarandamas tik pagavus žuvį
 - Atnaujinti upių žemėlapiai
 - Pridėtas leaderboardas "L": rodoma sugautų žuvų skaičius, didžiausia sugauta žuvis, žaidėjo lygis, pinigai, žaidimo laikas
+- Pridėtas bugu ir pasiulymų siuntimas "TAB" menių, tad jeigu radote buga ar norite kažką pasiūlyti darykite tai būtent per ten
 - Kiti dalykai, kurie nenusipelnė čia būti parašyti
