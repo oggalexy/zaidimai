@@ -2,7 +2,7 @@ Date: 2026-09-22
 
 Kas naujo:
 
-- Pridėta sliekų kasimo vieta
+- Pridėta sliekų kasimo viet
 - Atnaujintas "P" menių
 - Pataisyti žuvų pavadinimai (Nuo šiol jie rašomi tik lietuvių kalba)
 - Masalas nuo šiol prarandamas tik pagavus žuvį
