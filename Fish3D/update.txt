@@ -1,3 +1,13 @@
+Date: 2026-09-24
+
+Kas naujo:
+
+- Dugninė
+- Spiningas
+- Varpeliai - kiekviena meškerė skamba kitaip
+- Retesnis kibimas – ilgiau laukti plūdinėje/dugninėje, rečiau spininge
+- UI - kompaktiškesnis Tab, atnaujinti Matas Surovec kreditai
+
 Date: 2026-09-23
 
 Kas naujo:
