@@ -1,5 +1,14 @@
 Date: 2026-09-24
 
+Papildymas:
+
+- Atnaujinta žuviės traukimo sistema
+- Pridėtas fullscreen
+- Žaidimas optimizuotas
+- Pridėtas bėgimas
+- Pridėtas meškerės pasidėjimas
+- Sutvarkyti keli bugai
+
 Kas naujo:
 
 - Dugninė
