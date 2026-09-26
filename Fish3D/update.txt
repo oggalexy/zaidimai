@@ -1,3 +1,13 @@
+Date: 2026-09-27
+
+Kas naujo:
+
+- Sutvarkyta sistemėlės levitacijos klaidos
+- Patvarkytas meškėrės modelis tiek rankose tiek ant stendo
+- Sutvarkyta kameros sukimosi bugas
+- Atnaujintos žiūrėjimo žemyn mechanikos
+
+
 Date: 2026-09-24
 
 Papildymas:
