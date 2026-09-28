@@ -1,3 +1,11 @@
+Date: 2026-09-28
+
+Kas naujo:
+
+- Sutvarkyta metimo garso bugas
+- Sutvarkyta spinigo partraukimas
+- Pridėti limitai ir licencijos kiekvienam mapui, išskyrus pirmam
+
 Date: 2026-09-27
 
 Kas naujo:
