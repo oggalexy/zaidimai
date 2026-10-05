@@ -1,3 +1,19 @@
+Date: 2026-10-05
+
+Kas naujo:
+
+- Pridėta groundbaito sistema
+- Pridėtas workbenchas/darbastalis
+- Pridėta šeryklėlės sistema
+- Sutvarkyta sistemėlės istrigimas
+- Pridėtas šioks toks žuvies modelis
+- Pridėta daugiau žuvų
+- Sutvarkytos licencijos
+- Sutvarkyti kiti dalykai, kurie nenusipelnė čia būti parašyti
+
+JEIGU RADOTE BUGŲ ARBA TURITE PASIŪLYMŲ PRANEŠKITE APIE JUOS PER "TAB" MENIŲ
+
+
 Date: 2026-09-28
 
 Kas naujo:
