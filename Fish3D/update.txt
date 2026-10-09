@@ -1,3 +1,22 @@
+Date: 2026-10-10
+
+Kas naujo:
+
+- Pridėtas meškėrės lenkimasis (ne tobulas)
+- Pridėtas šuolis
+- Atnaujintos valo fizikos
+- Pridėtas leaderboardo sortinimas
+- Atnaujintas minimapas
+- Padidinti tvenkiniai
+- Laikas nuo šiol visiems toks pats
+- Pridėti skirtingu žuvų spotai kurie keičiasi kas kažkiek laiko
+- Pridėtas valo clipas
+- Pridėti svareliai
+- Padaryta kad galėtum naudoti numpada vietoj skaičių viršuje
+- Sutvarkyti(Pridėti) kiti dalykai, kurie nenusipelnė čia būti parašyti
+
+JEIGU RADOTE BUGŲ ARBA TURITE PASIŪLYMŲ PRANEŠKITE APIE JUOS PER "TAB" MENIŲ
+
 Date: 2026-10-05
 
 Kas naujo:
