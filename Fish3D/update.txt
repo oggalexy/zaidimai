@@ -1,3 +1,14 @@
+Date: 2026-10-20
+
+Kas naujo:
+
+- Pridėtas pagautų žuvų žurnalas
+- Pridėtos kasdieninės ir kassavaitinės užduotys
+- Atnaujintas žuvų elgesys
+- Pridėti orai
+- Dabar žvejojant su tam tikra sistemėle kelsite žvejybos su ta sistemėle lygį ir gausite taškų, kuriuos galėsite panaudoti žvejybos įgūdžiams tobulinti.
+- Žuvų kainos nuo šiol yra dinaminės
+
 Date: 2026-10-16
 
 Kas naujo:
