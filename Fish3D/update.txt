@@ -1,3 +1,10 @@
+Date: 2026-10-22
+
+Kas naujo:
+
+- Sutvarkyti bugai ir exploitai
+
+
 Date: 2026-10-20
 
 Kas naujo:
