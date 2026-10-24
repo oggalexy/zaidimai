@@ -1,9 +1,16 @@
+Date: 2026-10-24
+
+Kas naujo:
+
+- Pridėtas akvariumas (B), į kurį galite įdėti žuvį. Per 5 tikro gyvenimo dienas ji užaugs, o už ją gausite daugiau pinigų.
+- Žurnalas nuo šiol rodo daugiau informacijos.
+- Visi meniu dabar gali būti uždaryti tuo pačiu mygtuku, kuriuo jie atidaromi.
+
 Date: 2026-10-22
 
 Kas naujo:
 
 - Sutvarkyti bugai ir exploitai
-
 
 Date: 2026-10-20
 
